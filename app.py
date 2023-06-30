@@ -2,9 +2,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-with open("model_gr.pickle", 'rb') as f:
-   model = pickle.load(f)
-model = pickle.load(open(path,'rb'))
+with open('ML_project/model_gr.pkl', 'rb') as handle:
+    model = pickle.load(handle)
 
 st.title('Предсказание цены подержанного автомобиля')
 
