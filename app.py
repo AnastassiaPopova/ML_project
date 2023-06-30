@@ -2,6 +2,7 @@ import sklearn
 import streamlit as st
 import pickle
 import pandas as pd
+import numpy as np
 
 with open('model_gr.pickle', 'rb') as handle:
     model = pickle.load(handle)
@@ -46,5 +47,6 @@ def predict():
     X = pd.DataFrame([row], columns = columns)
     prediction = model.predict(X)
     st.write(prediction)
+    st.write(np.exp(prediction))
 
 st.button('Рассчитать стоимость', on_click = predict)
