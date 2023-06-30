@@ -42,7 +42,7 @@ else:
     owner_Second = 0
 
 def predict():
-    row = np.array([year, km_driven, engine, max_power, seats, mileage_kmpl, \
+    row = np.array([year, km_driven, engine, max_power, seats, mileage, \
                    fuel_Others, fuel_Petrol, seller_type_Individual, transmission_Manual, owner_Second])
     X = pd.DataFrame([row], columns = columns)
     prediction = model.predict(X)
