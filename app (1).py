@@ -1,3 +1,4 @@
+import streamlit as st
 # Название
 st.title("Песочница")
 
