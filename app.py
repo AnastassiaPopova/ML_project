@@ -2,7 +2,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-path="/model_gr.pickle"
+#path="/model_gr.pickle"
+path = "/app/ml_project/model_gr.pickley"
 
 #with open('path', 'rb') as f:
  #   model = pickle.load(path)
