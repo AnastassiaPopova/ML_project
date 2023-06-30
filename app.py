@@ -44,9 +44,9 @@ else:
 def predict():
     row = np.array([year, km_driven, engine, max_power, seats, mileage, \
                    fuel_Others, fuel_Petrol, seller_type_Individual, transmission_Manual, owner_Second])
-    X = pd.DataFrame([row], columns = columns)
+    X = pd.DataFrame(row.reshape(1, -1))
     prediction = model.predict(X)
-    st.write(prediction)
-    st.write(np.exp(prediction))
+    st.write(prediction[0])
+    st.write(np.exp(prediction)[0])
 
 st.button('Рассчитать стоимость', on_click = predict)
