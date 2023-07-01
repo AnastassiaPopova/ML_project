@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-def process_main_page():
-    show_main_page()
+#def process_main_page():
+#    show_main_page()
 
 def show_main_page():
     image = Image.open('cars.jpg')
@@ -28,6 +28,7 @@ def show_main_page():
 
     st.image(image)
 
+def show_main_page()
 
 with open('model_gr.pickle', 'rb') as handle:
     model = pickle.load(handle)
