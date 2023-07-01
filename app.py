@@ -3,6 +3,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 with open('model_gr.pickle', 'rb') as handle:
     model = pickle.load(handle)
