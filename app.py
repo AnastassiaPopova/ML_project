@@ -88,8 +88,9 @@ def predict():
     row = np.array([year, km_driven, engine, max_power, seats, mileage, \
                    fuel_Others, fuel_Petrol, seller_type_Individual, transmission_Manual, owner_Second])
     prediction = model.predict(row.reshape(1, -1))
+    return round(np.exp(prediction)[0])
     #st.write(np.exp(prediction)[0])
-    st.write(np.exp(prediction)[0])
+    #st.write(np.exp(prediction)[0])
 
 st.markdown(""" 
 <style>
@@ -100,5 +101,8 @@ div.stButton > button:first-child {
 
 #if st.button('Рассчитать стоимость', on_click = predict):
 #    st.success('Welcome', np.exp(prediction)[0])
-st.button('Рассчитать стоимость', on_click = predict)
+#st.button('Рассчитать стоимость', on_click = predict)
  #   st.success('Welcome', predict)
+if st.button("Рассчитать стоимость"): 
+    result = predict()
+    st.success('Your loan is {}'.format(result))
