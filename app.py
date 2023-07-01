@@ -48,6 +48,7 @@ def predict():
     X = pd.DataFrame(row.reshape(1, -1))
     prediction = model.predict(X)
     st.write(np.exp(prediction)[0])
+    return row
 
 st.button('Рассчитать стоимость', on_click = predict)
 st.write(row)
