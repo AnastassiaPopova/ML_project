@@ -51,10 +51,10 @@ with st.container():
     with left_column:
         year = int(st.text_input("Год выпуска машины", "2015"))
         km_driven = st.number_input('Пробег машины (км)')
-        engine = st.number_input('Объем двигателя (куб.см)')
+        engine = st.number_input('Объем двигателя (куб.см)',400, 3000)
         st.write("######")
-        max_power = st.number_input('Пиковая мощность (л.с.)')
-        mileage = st.number_input('Расход двигателя (км/л)')
+        max_power = st.number_input('Пиковая мощность (л.с.)', 20, 400)
+        mileage = st.number_input('Расход двигателя (км/л)',  5, 50)
     with right_column:
         fuel = st.selectbox('Тип топлива', ['Дизель', 'Бензин', 'Другое'])
         if fuel == "Бензин":
@@ -89,8 +89,6 @@ def predict():
                    fuel_Others, fuel_Petrol, seller_type_Individual, transmission_Manual, owner_Second])
     prediction = model.predict(row.reshape(1, -1))
     return round(np.exp(prediction)[0])
-    #st.write(np.exp(prediction)[0])
-    #st.write(np.exp(prediction)[0])
 
 st.markdown(""" 
 <style>
@@ -99,10 +97,6 @@ div.stButton > button:first-child {
 }
 <style>""", unsafe_allow_html=True)
 
-#if st.button('Рассчитать стоимость', on_click = predict):
-#    st.success('Welcome', np.exp(prediction)[0])
-#st.button('Рассчитать стоимость', on_click = predict)
- #   st.success('Welcome', predict)
 if st.button("Рассчитать стоимость"): 
     result = predict()
-    st.success('Your loan is {}'.format(result))
+    st.success('Предсказанная стоимость автомобиля: {}'.format(result))
