@@ -7,11 +7,12 @@ import numpy as np
 with open('model_gr.pickle', 'rb') as handle:
     model = pickle.load(handle)
 
-st.title('Предсказание цены подержанного автомобиля')
+st.title('Рассчитайте стоимость Вашего подержанного автомобиля')
+st.write('Для более точного расчета, пожалуйста, введите все характеристики')
 
 year = int(st.text_input("Год выпуска машины", "2015"))
 km_driven = st.number_input('Пробег машины (км)')
-fuel = st.sidebar.select_slider('Тип топлива', ['Дизель', 'Бензин', 'Другое'])
+fuel = st.sidebar.selectbox('Тип топлива', ['Дизель', 'Бензин', 'Другое'])
 if fuel == "Бензин":
     fuel_Petrol = 1
     fuel_Others = 0
