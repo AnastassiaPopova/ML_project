@@ -5,9 +5,6 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-with open('model_gr.pickle', 'rb') as handle:
-    model = pickle.load(handle)
-
 def process_main_page():
     show_main_page()
 
@@ -30,6 +27,10 @@ def show_main_page():
     )
 
     st.image(image)
+
+
+with open('model_gr.pickle', 'rb') as handle:
+    model = pickle.load(handle)
 
 st.title('Рассчитайте стоимость Вашего подержанного автомобиля')
 st.write('Для более точного расчета, пожалуйста, введите все характеристики')
