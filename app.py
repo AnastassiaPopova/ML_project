@@ -50,3 +50,4 @@ def predict():
     st.write(np.exp(prediction)[0])
 
 st.button('Рассчитать стоимость', on_click = predict)
+st.write(row)
