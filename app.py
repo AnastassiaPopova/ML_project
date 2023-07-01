@@ -67,7 +67,7 @@ def predict():
     row = np.array([year, km_driven, engine, max_power, seats, mileage, \
                    fuel_Others, fuel_Petrol, seller_type_Individual, transmission_Manual, owner_Second])
     prediction = model.predict(row.reshape(1, -1))
-    st.write(prediction[0])
+    st.write(np.exp(prediction)[0])
     return row
 
 st.button('Рассчитать стоимость', on_click = predict)
