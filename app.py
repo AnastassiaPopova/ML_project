@@ -7,6 +7,29 @@ import numpy as np
 with open('model_gr.pickle', 'rb') as handle:
     model = pickle.load(handle)
 
+def process_main_page():
+    show_main_page()
+
+def show_main_page():
+    image = Image.open('cars.jpg')
+
+    st.set_page_config(
+        layout="wide",
+        initial_sidebar_state="auto",
+        page_title="Demo Titanic",
+        page_icon=image,
+
+    )
+
+    st.write(
+        """
+        # Классификация пассажиров титаника
+        Определяем, кто из пассажиров выживет, а кто – нет.
+        """
+    )
+
+    st.image(image)
+
 st.title('Рассчитайте стоимость Вашего подержанного автомобиля')
 st.write('Для более точного расчета, пожалуйста, введите все характеристики')
 
@@ -51,4 +74,6 @@ def predict():
     return row
 
 st.button('Рассчитать стоимость', on_click = predict)
-st.write(row)
+
+if __name__ == "__main__":
+    process_main_page()
