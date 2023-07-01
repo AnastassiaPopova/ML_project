@@ -3,6 +3,8 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+import requests
+from streamlit_lottie import st_lottie
 from PIL import Image
 
 def process_main_page():
