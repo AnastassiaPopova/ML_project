@@ -28,7 +28,6 @@ def show_main_page():
 
     st.image(image)
 
-def show_main_page()
 
 with open('model_gr.pickle', 'rb') as handle:
     model = pickle.load(handle)
