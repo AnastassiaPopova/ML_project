@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-#def process_main_page():
-#    show_main_page()
+def process_main_page():
+    show_main_page()
 
 def show_main_page():
     image = Image.open('cars.jpg')
