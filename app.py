@@ -76,6 +76,3 @@ def predict():
     return row
 
 st.button('Рассчитать стоимость', on_click = predict)
-
-if __name__ == "__main__":
-    process_main_page()
