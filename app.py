@@ -9,6 +9,9 @@ from PIL import Image
 
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
+with open('model_gr.pkl', 'rb') as handle:
+    model = pickle.load(handle)
+
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
