@@ -51,10 +51,10 @@ with st.container():
     with left_column:
         year = int(st.text_input("Год выпуска машины", "2015"))
         km_driven = st.number_input('Пробег машины (км)')
-        engine = st.number_input('Объем двигателя (куб.см)',400, 3000)
+        engine = st.number_input('Объем двигателя (куб.см)',200, 3000)
         st.write("######")
-        max_power = st.number_input('Пиковая мощность (л.с.)', 20, 400)
-        mileage = st.number_input('Расход двигателя (км/л)',  5, 50)
+        max_power = st.number_input('Пиковая мощность (л.с.)', 20, 500)
+        mileage = st.number_input('Расход двигателя (км/л)',  5, 100)
     with right_column:
         fuel = st.selectbox('Тип топлива', ['Дизель', 'Бензин', 'Другое'])
         if fuel == "Бензин":
