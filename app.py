@@ -1,4 +1,3 @@
-pip install streamlit-lottie
 import sklearn
 import streamlit as st
 import pickle
@@ -8,32 +7,23 @@ import requests
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-def process_main_page():
-    show_main_page()
+st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
-def show_main_page():
-    image = Image.open('cars.jpg')
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 
-    st.set_page_config(
-        layout="wide",
-        initial_sidebar_state="auto",
-        page_title="Demo Titanic",
-        page_icon=image,
+lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
-    )
-
-    st.write(
-        """
-        # Классификация пассажиров титаника
-        Определяем, кто из пассажиров выживет, а кто – нет.
-        """
-    )
-
-    st.image(image)
-
-
-with open('model_gr.pickle', 'rb') as handle:
-    model = pickle.load(handle)
+with st.container():
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.write("##")
+        st.write("[YouTube Channel >]")
+    with right_column:
+        st_lottie(lottie_coding, height=300, key="coding")
 
 st.title('Рассчитайте стоимость Вашего подержанного автомобиля')
 st.write('Для более точного расчета, пожалуйста, введите все характеристики')
