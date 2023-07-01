@@ -89,7 +89,7 @@ def predict():
                    fuel_Others, fuel_Petrol, seller_type_Individual, transmission_Manual, owner_Second])
     prediction = model.predict(row.reshape(1, -1))
     #st.write(np.exp(prediction)[0])
-    return np.exp(prediction)[0]
+    print(np.exp(prediction)[0])
 
 st.markdown(""" 
 <style>
