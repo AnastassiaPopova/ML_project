@@ -25,12 +25,12 @@ seats = st.slider("Количество мест", 2, 14)
 engine = st.number_input('Объем двигателя (куб.см)')
 max_power = st.number_input('Пиковая мощность (л.с.)')
 mileage = st.number_input('Расход двигателя (км/л)')
-seller_type = st.sitebar.selectbox("Тип продавца", ("Индивидуальный", "Дилер"))
+seller_type = st.sidebar.selectbox("Тип продавца", ("Индивидуальный", "Дилер"))
 if seller_type == "Индивидуальный":
     seller_type_Individual = 1
 else:
     seller_type_Individual = 0
-transmission = st.sitebar.selectbox("Коробка передач", ("Механическая", "Автоматическая"))
+transmission = st.sidebar.selectbox("Коробка передач", ("Механическая", "Автоматическая"))
 if transmission == "Механическая":
     transmission_Manual = 1
 else:
