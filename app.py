@@ -99,4 +99,4 @@ div.stButton > button:first-child {
 <style>""", unsafe_allow_html=True)
 
 if st.button('Рассчитать стоимость', on_click = predict):
-    st.success('Welcome')
+    st.success('Welcome', np.exp(prediction)[0])
