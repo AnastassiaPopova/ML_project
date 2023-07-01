@@ -98,5 +98,7 @@ div.stButton > button:first-child {
 }
 <style>""", unsafe_allow_html=True)
 
-if st.button('Рассчитать стоимость', on_click = predict):
-    st.success('Welcome', np.exp(prediction)[0])
+#if st.button('Рассчитать стоимость', on_click = predict):
+#    st.success('Welcome', np.exp(prediction)[0])
+if st.button('Рассчитать стоимость'):
+    st.success('Welcome', predict)
